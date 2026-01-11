@@ -1,0 +1,29 @@
+{
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"format": "prettier --write .",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"next": "^16.1.1",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3"
+	},
+	"devDependencies": {
+		"@next/eslint-plugin-next": "^16.1.1",
+		"@types/node": "25.0.6",
+		"@types/react": "^19.2.8",
+		"@types/react-dom": "^19.2.3",
+		"@typescript-eslint/eslint-plugin": "^8.52.0",
+		"@typescript-eslint/parser": "^8.52.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"husky": "^9.1.7",
+		"prettier": "^3.7.4",
+		"typescript": "5.9.3"
+	}
+}

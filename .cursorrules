@@ -1,0 +1,45 @@
+# Commit Message Rules
+
+## Format
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+## Types
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation
+- `style`: Formatting, whitespace
+- `refactor`: Code restructuring
+- `perf`: Performance improvement
+- `test`: Tests
+- `build`: Build system
+- `ci`: CI configuration
+- `chore`: Maintenance tasks
+- `revert`: Revert previous commit
+
+## Scope (Optional)
+
+Common scopes: `app`, `components`, `styles`, `config`, `deps`
+
+## Guidelines
+
+- Subject: imperative mood, lowercase, 50-72 characters, no period
+- Body: imperative mood, max 72 characters per line, explain "what" and "why" (not "how")
+- Footer: `BREAKING CHANGE: <description>`
+- Initial commits: Can be longer since they set up the whole project
+
+## Examples
+
+```
+feat(auth): add user login
+fix(components): resolve button click handler
+docs: update README
+refactor(app): simplify layout structure
+```
