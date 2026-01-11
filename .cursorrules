@@ -23,6 +23,8 @@
 - `ci`: CI configuration
 - `chore`: Maintenance tasks
 - `revert`: Revert previous commit
+- Use the imperative mood in subjects (e.g., "add", "fix", "remove").
+- Keep subject lines short and descriptive, max 72 characters.
 
 ## Scope (Optional)
 
