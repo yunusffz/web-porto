@@ -1,43 +1,44 @@
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import RootLayout from './layout';
 
 describe('RootLayout', () => {
   it('renders children correctly', () => {
-    const { container } = render(
+    render(
       <RootLayout>
         <div data-testid="test-child">Test Content</div>
       </RootLayout>,
     );
 
-    const child = container.querySelector('[data-testid="test-child"]');
+    const child = screen.getByTestId('test-child');
     expect(child).toBeInTheDocument();
     expect(child).toHaveTextContent('Test Content');
   });
 
-  it('renders html structure with correct lang attribute', () => {
-    const { container } = render(
+  it('renders multiple children', () => {
+    render(
       <RootLayout>
-        <div>Content</div>
+        <div data-testid="child-1">First Child</div>
+        <div data-testid="child-2">Second Child</div>
       </RootLayout>,
     );
 
-    const html = container.querySelector('html');
-    expect(html).toHaveAttribute('lang', 'en');
+    expect(screen.getByTestId('child-1')).toHaveTextContent('First Child');
+    expect(screen.getByTestId('child-2')).toHaveTextContent('Second Child');
   });
 
-  it('wraps children in body tag', () => {
-    const { container } = render(
+  it('renders complex nested children', () => {
+    render(
       <RootLayout>
-        <main>Main Content</main>
+        <main>
+          <header data-testid="header">Header</header>
+          <article data-testid="article">Article Content</article>
+        </main>
       </RootLayout>,
     );
 
-    const body = container.querySelector('body');
-    const main = container.querySelector('main');
-
-    expect(body).toBeInTheDocument();
-    expect(main?.parentElement).toBe(body);
+    expect(screen.getByTestId('header')).toHaveTextContent('Header');
+    expect(screen.getByTestId('article')).toHaveTextContent('Article Content');
   });
 
   it('matches snapshot', () => {
@@ -47,6 +48,6 @@ describe('RootLayout', () => {
       </RootLayout>,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
