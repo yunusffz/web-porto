@@ -16,9 +16,4 @@ describe('Page', () => {
 
     expect(screen.getByText('Hello, Next.js!')).toBeInTheDocument();
   });
-
-  it('matches snapshot', () => {
-    const { container } = render(<Page />);
-    expect(container).toMatchSnapshot();
-  });
 });

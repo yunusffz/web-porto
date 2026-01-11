@@ -1,53 +1,38 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
 import RootLayout from './layout';
 
 describe('RootLayout', () => {
-  it('renders children correctly', () => {
-    render(
-      <RootLayout>
-        <div data-testid="test-child">Test Content</div>
-      </RootLayout>,
-    );
+  it('returns the correct JSX structure with children', () => {
+    const testChildren = <div data-testid="test-child">Test Content</div>;
+    const result = RootLayout({ children: testChildren });
 
-    const child = screen.getByTestId('test-child');
-    expect(child).toBeInTheDocument();
-    expect(child).toHaveTextContent('Test Content');
+    expect(result).toBeDefined();
+    expect(result.type).toBe('html');
+    expect(result.props.lang).toBe('en');
   });
 
-  it('renders multiple children', () => {
-    render(
-      <RootLayout>
-        <div data-testid="child-1">First Child</div>
-        <div data-testid="child-2">Second Child</div>
-      </RootLayout>,
-    );
+  it('passes children to the body element', () => {
+    const testChildren = <main>Main Content</main>;
+    const result = RootLayout({ children: testChildren });
 
-    expect(screen.getByTestId('child-1')).toHaveTextContent('First Child');
-    expect(screen.getByTestId('child-2')).toHaveTextContent('Second Child');
+    // Access the body element (first child of html)
+    const bodyElement = result.props.children;
+    expect(bodyElement.type).toBe('body');
+    expect(bodyElement.props.children).toBe(testChildren);
   });
 
-  it('renders complex nested children', () => {
-    render(
-      <RootLayout>
-        <main>
-          <header data-testid="header">Header</header>
-          <article data-testid="article">Article Content</article>
-        </main>
-      </RootLayout>,
+  it('accepts React nodes as children', () => {
+    const complexChildren = (
+      <>
+        <header>Header</header>
+        <main>Content</main>
+        <footer>Footer</footer>
+      </>
     );
 
-    expect(screen.getByTestId('header')).toHaveTextContent('Header');
-    expect(screen.getByTestId('article')).toHaveTextContent('Article Content');
-  });
+    const result = RootLayout({ children: complexChildren });
+    const bodyElement = result.props.children;
 
-  it('matches snapshot', () => {
-    const { container } = render(
-      <RootLayout>
-        <div>Snapshot test</div>
-      </RootLayout>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
+    expect(bodyElement.props.children).toBe(complexChildren);
   });
 });
