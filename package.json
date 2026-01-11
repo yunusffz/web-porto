@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "rm -rf .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -8,7 +9,8 @@
     "format": "prettier --write .",
     "prepare": "husky",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "clean": "rm -rf .next node_modules/.cache"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
