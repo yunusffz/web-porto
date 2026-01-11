@@ -15,3 +15,5 @@ coverage/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+next-env.d.ts
