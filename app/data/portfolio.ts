@@ -1,8 +1,8 @@
 export const portfolioData = {
   profile: {
     name: 'Yunus Ahmad Baktir',
-    title: 'Frontend Engineer',
-    bio: 'Dedicated Frontend Engineer with over 8 years of experience specializing in building high-performance, scalable web applications using Angular, Next.js, and Vue.js. Proven track record in leading technical discussions and translating complex government and banking business requirements into seamless user interfaces. Expert in optimizing performance and modernizing UI/UX with TailwindCSS, ShadCN, and Headless UI. Passionate about excellence in code quality, implementing robust CI/CD pipelines with Docker, and driving impactful digital transformation through data-driven visualizations.',
+    title: 'Technical Project Manager | IT Project Lead',
+    bio: 'A results-driven Technical Project Manager with over 8 years of experience leading digital transformation initiatives in the government and banking sectors. Expert in Requirement Engineering, bridging the gap between non-technical stakeholders and development teams to deliver high-performance, scalable systems. Proven leader in Project Governance, managing full project lifecycles using modern collaboration tools like ClickUp, Trello, and Miro to ensure 100% on-time delivery. Strong technical background in frontend and backend development, with hands-on experience in Angular, Next.js, Vue.js, Python, Docker, and CI/CD pipelines.',
     yearsOfExperience: '8+',
   },
   contact: {
@@ -12,6 +12,13 @@ export const portfolioData = {
     github: 'https://github.com/yunusffz',
   },
   skills: {
+    projectManagement: ['ClickUp', 'Trello', 'Miro', 'GitLab', 'GitHub'],
+    managementFrameworks: [
+      'Requirement Engineering',
+      'Project Governance',
+      'SDLC',
+      'System Architecture',
+    ],
     frontend: ['TypeScript', 'JavaScript', 'Next.js', 'Angular', 'Vue.js', 'HTML5', 'CSS3'],
     uiStyling: ['TailwindCSS', 'ShadCN', 'Headless UI', 'Bootstrap'],
     backend: ['Python (FastAPI, Flask)', 'PHP (Laravel, CodeIgniter)', 'MySQL', 'PostgreSQL'],
@@ -27,14 +34,14 @@ export const portfolioData = {
   },
   employment: [
     {
-      title: 'Senior Frontend Engineer',
+      title: 'Senior Frontend Engineer / Technical Lead',
       company: 'Jabar Digital Service',
       period: 'Oct 2019 – Dec 2025',
       responsibilities: [
-        'System Design Leadership: Participated in high-level technical discussions regarding system architecture for Ekosistem Data Jabar to ensure frontend scalability and data efficiency.',
-        'Frontend Development: Developed and maintained sophisticated user interfaces using Angular, focusing on creating modular and responsive components.',
-        'API Integration: Engineered robust backend services and APIs using Python to support seamless data flow between the server and the frontend.',
-        'Modern DevOps Practices: Orchestrated containerized environments using Docker and streamlined deployment by implementing CI/CD pipelines through GitLab.',
+        'System Design Leadership: Orchestrated high-level technical discussions for Ekosistem Data Jabar to ensure frontend scalability and data efficiency.',
+        'Operational Management: Streamlined deployment cycles by implementing automated CI/CD pipelines via GitLab and managing containerized environments with Docker.',
+        'Project Delivery: Managed the development of sophisticated user interfaces and ensured modularity and responsiveness across government digital products.',
+        'API Integration Oversight: Engineered robust backend services using Python to support seamless data flow between server and frontend.',
       ],
     },
     {
@@ -42,19 +49,18 @@ export const portfolioData = {
       company: 'Solmit Bangun Indonesia',
       period: 'Jan 2019 – Sep 2019',
       responsibilities: [
-        'Requirement Engineering: Translated complex client business requirements into detailed technical specifications for the development team.',
-        'Project Governance: Managed project lifecycles, timelines, and task priorities using structured data in Excel to ensure on-time delivery.',
-        'Operational Deployment: Led the installation, deployment, and configuration of applications while providing comprehensive training and guidance to end-users.',
+        'Requirement Engineering: Translated complex client business requirements into detailed technical specifications for the engineering team.',
+        'Project Governance: Managed project lifecycles, timelines, and task priorities using ClickUp and Trello to ensure consistent on-time delivery.',
+        'Operational Deployment: Led the installation, configuration, and deployment of applications while providing comprehensive guidance to end-users.',
       ],
     },
     {
-      title: 'Full Stack Developer',
+      title: 'Full Stack Developer / Banking Solution Specialist',
       company: 'Solmit Bangun Indonesia',
       period: 'Feb 2017 – Dec 2018',
       responsibilities: [
-        'Banking Solution Specialist: Developed internal banking applications with a specific focus on Risk Management and Risk-Based Audit systems.',
-        'Data Integrity & Maintenance: Designed, built, and maintained web applications to support critical banking operations, ensuring high-precision data reliability.',
-        'System Optimization: Leveraged various technology stacks to optimize system efficiency and scalability for financial industry standards.',
+        'Solution Management: Developed internal banking applications with a focus on Risk Management and Risk-Based Audit systems.',
+        'Data Reliability: Designed and maintained mission-critical web applications, ensuring high-precision data integrity for financial operations.',
       ],
     },
   ],

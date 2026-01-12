@@ -6,7 +6,12 @@ import { portfolioData } from './data/portfolio'
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState<'about' | 'projects' | 'contact'>('about')
-  const topSkills = [...portfolioData.skills.frontend.slice(0, 4)]
+  const topSkills = [
+    'Results-Driven Leadership',
+    'Data-Driven Decisions',
+    'Clean Architecture',
+    'Effective Communicator',
+  ]
 
   return (
     <main className="relative flex min-h-screen bg-[#21252b] overflow-hidden">
@@ -91,6 +96,20 @@ export default function Page() {
                     Skills & Expertise
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <h4 className="text-[#f6f7f8] font-semibold mb-2">
+                        Project Management Tools
+                      </h4>
+                      <p className="text-[#ffefd6]/80">
+                        {portfolioData.skills.projectManagement.join(', ')}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-[#f6f7f8] font-semibold mb-2">Management Frameworks</h4>
+                      <p className="text-[#ffefd6]/80">
+                        {portfolioData.skills.managementFrameworks.join(', ')}
+                      </p>
+                    </div>
                     <div>
                       <h4 className="text-[#f6f7f8] font-semibold mb-2">Frontend Engineering</h4>
                       <p className="text-[#ffefd6]/80">
