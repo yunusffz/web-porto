@@ -9,7 +9,7 @@ export default function Page() {
   const topSkills = [...portfolioData.skills.frontend.slice(0, 4)]
 
   return (
-    <main className="relative flex h-screen bg-[#21252b] overflow-hidden">
+    <main className="relative flex min-h-screen bg-[#21252b] overflow-hidden">
       <div className="absolute -top-20 -right-20 w-0 h-0 border-l-[200px] border-l-transparent border-b-[200px] border-b-[#f8b133]/20 rotate-45 blur-xl"></div>
 
       <div className="absolute -bottom-32 -left-32 w-0 h-0 border-r-[300px] border-r-transparent border-t-[300px] border-t-[#f8b133]/15 rotate-12 blur-xl"></div>
@@ -49,10 +49,10 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="flex gap-2 mb-6 border-b border-[#282c34]">
+          <div className="flex gap-1 sm:gap-2 mb-6 border-b border-[#282c34]">
             <button
               onClick={() => setActiveTab('about')}
-              className={`px-6 py-3 font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold transition-all text-sm sm:text-base ${
                 activeTab === 'about'
                   ? 'text-[#f8b133] border-b-2 border-[#f8b133]'
                   : 'text-[#ffefd6]/60 hover:text-[#ffefd6]'
@@ -62,7 +62,7 @@ export default function Page() {
             </button>
             <button
               onClick={() => setActiveTab('projects')}
-              className={`px-6 py-3 font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold transition-all text-sm sm:text-base ${
                 activeTab === 'projects'
                   ? 'text-[#f8b133] border-b-2 border-[#f8b133]'
                   : 'text-[#ffefd6]/60 hover:text-[#ffefd6]'
@@ -72,7 +72,7 @@ export default function Page() {
             </button>
             <button
               onClick={() => setActiveTab('contact')}
-              className={`px-6 py-3 font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold transition-all text-sm sm:text-base ${
                 activeTab === 'contact'
                   ? 'text-[#f8b133] border-b-2 border-[#f8b133]'
                   : 'text-[#ffefd6]/60 hover:text-[#ffefd6]'
@@ -82,12 +82,14 @@ export default function Page() {
             </button>
           </div>
 
-          <div className="bg-[#282c34]/60 backdrop-blur-sm rounded-lg p-8 min-h-[300px]">
+          <div className="bg-[#282c34]/60 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 min-h-[250px] sm:min-h-[300px]">
             {activeTab === 'about' && (
               <div className="space-y-4 text-[#ffefd6]">
-                <p className="text-lg leading-relaxed">{portfolioData.profile.bio}</p>
+                <p className="text-base sm:text-lg leading-relaxed">{portfolioData.profile.bio}</p>
                 <div className="pt-4 border-t border-[#21252b]">
-                  <h3 className="text-[#f8b133] font-semibold mb-3">Skills & Expertise</h3>
+                  <h3 className="text-[#f8b133] font-semibold mb-3 text-base sm:text-lg">
+                    Skills & Expertise
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <h4 className="text-[#f6f7f8] font-semibold mb-2">Frontend Engineering</h4>
@@ -115,10 +117,12 @@ export default function Page() {
             )}
 
             {activeTab === 'projects' && (
-              <div className="space-y-6 max-h-[400px] overflow-y-auto pr-2">
+              <div className="space-y-4 sm:space-y-6  overflow-y-auto pr-2">
                 {portfolioData.projects.map((project, index) => (
                   <div key={index} className="border-l-4 border-[#f8b133] pl-4">
-                    <h3 className="text-[#f6f7f8] text-xl font-bold mb-2">{project.name}</h3>
+                    <h3 className="text-[#f6f7f8] text-lg sm:text-xl font-bold mb-2">
+                      {project.name}
+                    </h3>
                     <p className="text-[#ffefd6]/80 text-sm mb-2">{project.description}</p>
                     {project.achievement && (
                       <p className="text-[#f8b133] text-xs mb-2">⚡ {project.achievement}</p>
@@ -130,20 +134,20 @@ export default function Page() {
             )}
 
             {activeTab === 'contact' && (
-              <div className="space-y-6">
-                <p className="text-[#ffefd6] text-lg">
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-[#ffefd6] text-base sm:text-lg">
                   Let's work together! Feel free to reach out through any of these channels.
                 </p>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
+                    <div className="w-10 h-10 flex-shrink-0 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
                       ✉
                     </div>
-                    <div>
-                      <p className="text-[#f6f7f8] font-semibold">Email</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[#f6f7f8] font-semibold text-sm sm:text-base">Email</p>
                       <a
                         href={`mailto:${portfolioData.contact.email}`}
-                        className="text-[#ffefd6]/80 text-sm hover:text-[#f8b133] transition-colors"
+                        className="text-[#ffefd6]/80 text-xs sm:text-sm hover:text-[#f8b133] transition-colors break-all"
                       >
                         {portfolioData.contact.email}
                       </a>
@@ -151,16 +155,16 @@ export default function Page() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
+                    <div className="w-10 h-10 flex-shrink-0 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
                       ⚡
                     </div>
-                    <div>
-                      <p className="text-[#f6f7f8] font-semibold">GitHub</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[#f6f7f8] font-semibold text-sm sm:text-base">GitHub</p>
                       <a
                         href={portfolioData.contact.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#ffefd6]/80 text-sm hover:text-[#f8b133] transition-colors"
+                        className="text-[#ffefd6]/80 text-xs sm:text-sm hover:text-[#f8b133] transition-colors break-all"
                       >
                         {portfolioData.contact.github}
                       </a>
@@ -168,16 +172,16 @@ export default function Page() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
+                    <div className="w-10 h-10 flex-shrink-0 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
                       💼
                     </div>
-                    <div>
-                      <p className="text-[#f6f7f8] font-semibold">LinkedIn</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[#f6f7f8] font-semibold text-sm sm:text-base">LinkedIn</p>
                       <a
                         href={`https://${portfolioData.contact.linkedin}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#ffefd6]/80 text-sm hover:text-[#f8b133] transition-colors"
+                        className="text-[#ffefd6]/80 text-xs sm:text-sm hover:text-[#f8b133] transition-colors break-all"
                       >
                         {portfolioData.contact.linkedin}
                       </a>
@@ -185,14 +189,14 @@ export default function Page() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
+                    <div className="w-10 h-10 flex-shrink-0 bg-[#f8b133]/20 rounded-full flex items-center justify-center text-[#f8b133]">
                       📱
                     </div>
-                    <div>
-                      <p className="text-[#f6f7f8] font-semibold">Phone</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-[#f6f7f8] font-semibold text-sm sm:text-base">Phone</p>
                       <a
                         href={`tel:${portfolioData.contact.phone}`}
-                        className="text-[#ffefd6]/80 text-sm hover:text-[#f8b133] transition-colors"
+                        className="text-[#ffefd6]/80 text-xs sm:text-sm hover:text-[#f8b133] transition-colors"
                       >
                         {portfolioData.contact.phone}
                       </a>
